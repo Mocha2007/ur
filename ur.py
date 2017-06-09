@@ -41,9 +41,9 @@ while white<7>black:
 					for i in range(len(blackpiece)):
 						if blackpiece[i]==whitepiece[choice]:
 							blackpiece[i]=0
-					open("game.html", "a").write(str(whitepiece[choice])+"x"+str(whitepiece[choice]+roll))
+					open("game.html", "a").write(str(whitepiece[choice]-roll)+"x"+str(whitepiece[choice]))
 				else:
-					open("game.html", "a").write(str(whitepiece[choice])+">"+str(whitepiece[choice]+roll))
+					open("game.html", "a").write(str(whitepiece[choice]-roll)+">"+str(whitepiece[choice]))
 				#forced?
 				if len(playablepiece)==1:
 					open("game.html", "a").write("f")
@@ -68,7 +68,11 @@ while white<7>black:
 				open("game.html", "a").write("\t<li>&Oslash;,")
 		else:
 			print("You rolled a zero!")
-			open("game.html", "a").write("\t<li>&Oslash;,")
+			if skipped==0:
+				open("game.html", "a").write("\t<li>&Oslash;,")
+			else:
+				open("game.html", "a").write("&Oslash;,")
+				skipped=0
 	else:
 		skip-=1
 		skipped=1
@@ -94,6 +98,7 @@ while white<7>black:
 					except ValueError:
 						choice=random.choice(playablepiece)
 				blackpiece[choice]+=roll
+				if skipped==1:skipped=0
 				if (13>blackpiece[choice]>4) and (blackpiece[choice] in whitepiece):
 					for i in range(len(whitepiece)):
 						if whitepiece[i]==blackpiece[choice]:
@@ -119,9 +124,11 @@ while white<7>black:
 			else:
 				print("You can't move!")
 				open("game.html", "a").write("&Oslash;</li>\n")
+				skipped=0
 		else:
 			print("You rolled a zero!")
 			open("game.html", "a").write("&Oslash;</li>\n")
+			skipped=0
 	else:
 		skip-=1
 		skipped=1
