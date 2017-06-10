@@ -103,9 +103,9 @@ while white<7>black:
 					for i in range(len(whitepiece)):
 						if whitepiece[i]==blackpiece[choice]:
 							whitepiece[i]=0
-					open("game.html", "a").write(str(whitepiece[choice])+"x"+str(whitepiece[choice]+roll))
+					open("game.html", "a").write(str(blackpiece[choice]-roll)+"x"+str(blackpiece[choice]))
 				else:
-					open("game.html", "a").write(str(whitepiece[choice])+">"+str(whitepiece[choice]+roll))
+					open("game.html", "a").write(str(blackpiece[choice]-roll)+">"+str(blackpiece[choice]))
 				if len(playablepiece)==1:
 					open("game.html", "a").write("f")
 				if blackpiece[choice]==4 or blackpiece[choice]==8 or blackpiece[choice]==14:
