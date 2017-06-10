@@ -65,7 +65,11 @@ while white<7>black:
 					open("game.html", "a").write(",")
 			else:
 				print("You can't move!")
-				open("game.html", "a").write("\t<li>&Oslash;,")
+				if skipped==0:
+					open("game.html", "a").write("\t<li>&Oslash;,")
+				else:
+					open("game.html", "a").write("&Oslash;,")
+					skipped=0
 		else:
 			print("You rolled a zero!")
 			if skipped==0:
