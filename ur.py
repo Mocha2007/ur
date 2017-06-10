@@ -8,7 +8,7 @@ black=0
 skip=0
 skipped=0
 print("Welcome to Mocha's Ur Simulator!")
-open("game.html", "a").write("<ol>\n")
+open("game.html", "w").write("<ol>\n")
 while white<7>black:
 	#white's move
 	if skip==0:
@@ -135,4 +135,5 @@ while white<7>black:
 if white==7:print("White wins!")
 else:print("Black wins!")
 print(white,"-",black)
+print(sum(whitepiece),"-",sum(blackpiece))
 open("game.html", "a").write("</ol>\n")
