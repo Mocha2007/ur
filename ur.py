@@ -77,7 +77,7 @@ while white<7>black:
 		skip-=1
 		skipped=1
 	#black's move, mirror of white's
-	if skip==0:
+	if skip==0 and white!=7:
 		roll=dice()
 		print("BLACK TO ROLL:",white,"-",black,"\nBlack rolls a",roll)
 		if roll!=0:
