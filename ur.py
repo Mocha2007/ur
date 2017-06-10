@@ -8,7 +8,7 @@ black=0
 skip=0
 skipped=0
 print("Welcome to Mocha's Ur Simulator!")
-open("game.html", "w").write("<ol>\n")
+open("game.html", "w+").write("<ol>\n")
 while white<7>black:
 	#white's move
 	if skip==0:
